@@ -1,10 +1,10 @@
-import { Form } from "../../components/Form";
+import { LoginForm } from "./components/LoginForm";
 import { LoginContainer } from "./Login.styles";
 
 export function LoginPage() {
     return (
        <LoginContainer>
-        <h1>Login</h1>
+        <LoginForm/>
        </LoginContainer>
     )
 }

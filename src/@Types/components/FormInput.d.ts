@@ -1,6 +1,8 @@
-interface formInputProps {
-    label: string | undefined;
-    width?: string | undefined;
+export interface FormInputProps {
+    label: string;
+    width?: string;
     size?: "small" | "medium" | undefined;
-    placeholder?: string | undefined;
+    placeholder?: string;
+    variant?: "standard" | "filled" | "outlined" | undefined;
+    fontSize?: string;
 }

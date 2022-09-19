@@ -1,8 +1,8 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { FormInputProps } from '../../@Types/components/FormInput';
 
-export default function FormInput({label, width = "75", size = "small", placeholder}: formInputProps) {
+export default function FormInput({label, width = "75", size = "small", placeholder, variant, fontSize = "1.2"}: FormInputProps) {
   return (
     <Box
       component="form"
@@ -15,11 +15,11 @@ export default function FormInput({label, width = "75", size = "small", placehol
       <TextField
        id="outlined-basic"
        label={label}
-       variant="outlined"
+       variant={variant}
        size={size}
        placeholder={placeholder}
        InputProps={{ sx: { height: 40 } }}
-       InputLabelProps={{ sx: { fontSize: 15 } }}
+       InputLabelProps={{ sx: { fontSize: `${fontSize}rem` } }}
         />
     </Box>
   );

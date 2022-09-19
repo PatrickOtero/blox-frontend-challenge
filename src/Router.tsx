@@ -10,9 +10,8 @@ export function Router() {
             <Route path="/" element={<DefaultLayout/>}>
                 <Route path="/" element={<LoginPage />}/>
                 <Route path="/register" element={<RegisterPage />}/>
-                <Route path="/list/:user" element={<CurricularUnitsListPage />}/>
             </Route>
-
+            <Route path="/list/:user" element={<CurricularUnitsListPage />}/>
         </Routes>
     )
 }

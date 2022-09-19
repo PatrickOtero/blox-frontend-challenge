@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-export const FormContainer = styled(Box)`
+export const RegisterFormContainer = styled(Box)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,14 +21,14 @@ export const FormContainer = styled(Box)`
     }
 `
 
-export const FormInputs = styled(Box)`
+export const RegisterFormInputs = styled(Box)`
     display: flex;
     flex-direction: column;
 
     gap: 0.2rem;
 `
 
-export const FormCheckbox = styled(Box)`
+export const RegisterFormCheckbox = styled(Box)`
     display: flex;
     gap: 1.2rem;
 

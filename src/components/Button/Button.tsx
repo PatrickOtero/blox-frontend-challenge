@@ -1,19 +1,21 @@
 import Button from '@mui/material/Button';
 import DescriptionIcon from '@mui/icons-material/Description';
-import Stack from '@mui/material/Stack';;
+import Stack from '@mui/material/Stack';
+import { ButtonProps } from '../../@Types/components/FormButton';
 
-export default function FormButton() {
+export default function FormButton({ variant="contained", width = "40", fontSize="1.2", text, icon = true, size = "medium" }: ButtonProps) {
   return (
     <Stack direction="row" spacing={2}>
       <Button
-       variant="contained"
-        startIcon={<DescriptionIcon />}
+       variant={variant}
+        startIcon={icon ? <DescriptionIcon /> : ""}
         style={{
-          minWidth: "45rem",
-          fontSize: "1.2rem"
+          minWidth: `${width}rem`,
+          fontSize: `${fontSize}rem`
         }}
+        size={size}
         >
-        CADASTRAR
+        {text}
       </Button>
     </Stack>
   );

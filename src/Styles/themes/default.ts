@@ -1,8 +1,10 @@
 export const defaultTheme = {
     white: "#fff",
 
-    backgroundColor: "#AFDBFF",
+    backgroundColor: "#dbe4eb",
     formColor: "#FFFFFF",
+
+    lightBlack1: "#2c282871",
 
     lightBlue1: "#0074D9",
     lightBlue2: "#7FDBFF",
