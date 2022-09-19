@@ -9,8 +9,8 @@ export const FormContainer = styled(Box)`
     background-color: ${props => props.theme.formColor};
     border-radius: 2rem;
 
-    width: 41vw;
-    height: 47vh;
+    width: 50rem;
+    height: 45rem;
 
     padding: 2rem;
 
