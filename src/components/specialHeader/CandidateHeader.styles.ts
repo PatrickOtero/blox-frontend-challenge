@@ -16,8 +16,6 @@ export const CandidateHeaderContainer = styled(Box)`
 
     background-color: ${props => props.theme.lightBlue1};
 
-    font-family: 'Open Sans', sans-serif;
-
     h1 {
         font-size: 3rem;
         color: ${props => props.theme.lightBlue2};

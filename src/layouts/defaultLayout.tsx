@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { CandidateHeader } from "../components/Header";
+import { CandidateHeader } from "../components/specialHeader";
 
 export function DefaultLayout() {
     return (
