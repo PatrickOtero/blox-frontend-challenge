@@ -20,8 +20,7 @@ export function LoginForm() {
             institution_id: "22"
         }
         try {
-            const response = await api.post(
-                'https://api-dev.blox.education/v2/authentication/login', body);
+            const response = await api.post('/v2/authentication/login', body);
 
                 setToken(response.data.token)
                 setLoggedName(userName)

@@ -39,8 +39,7 @@ export function RegisterForm() {
         }
 
         try {
-            const response = await api.post(
-                'https://api-dev.blox.education/auth', body
+            const response = await api.post('/auth', body
             );
 
             setRegisterData(response.data)
