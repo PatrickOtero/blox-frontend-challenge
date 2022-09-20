@@ -10,6 +10,13 @@
 
 ### Link do deploy no Raiway: https://blox-frontend-challenge-production.up.railway.app/
 
+### Se o link estiver com problemas, teste localmente:
+
+         - Clone este repositório localmente
+         - Abra o vscode e vá até a pasta raíz (onde está a pasta src)
+         - execute o comando: npm i (para instalar as dependências)
+         - Após a instalação, execute o comando: npm run start (para rodar a aplicação no seu localhost:3000);
+
 # Obrigado Blox pela oportunidade que me deu.
 
 ## Tecnologias que devem ser usadas no projeto:
