@@ -8,7 +8,7 @@
 
 ### OBS: Se ainda quiserem testar o que eu consegui fazer, na parte do login, para que seja redirecionado para a lista de unidades curriculares a página precisa ser atualizada (f5)
 
-Link do deploy no Raiway: https://blox-frontend-challenge-production.up.railway.app/
+###Link do deploy no Raiway: https://blox-frontend-challenge-production.up.railway.app/
 
 # Obrigado Blox pela oportunidade que me deu.
 
