@@ -12,7 +12,7 @@
 
 # Obrigado Blox pela oportunidade que me deu.
 
-## Tecnologias do projeto:
+## Tecnologias que devem ser usadas no projeto:
 
         - Typescript
         - React
