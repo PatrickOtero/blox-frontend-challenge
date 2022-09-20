@@ -5,4 +5,7 @@ export interface FormInputProps {
     placeholder?: string;
     variant?: "standard" | "filled" | "outlined" | undefined;
     fontSize?: string;
+    value?: string;
+    type?: string;
+    onChange?: (e: any) => void;
 }

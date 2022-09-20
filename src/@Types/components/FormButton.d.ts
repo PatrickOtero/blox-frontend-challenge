@@ -5,4 +5,6 @@ export interface ButtonProps {
     fontSize?: string;
     icon?: boolean;
     size?: "small" | "medium" | "large";
+    type?: "button" | "submit" | "reset" | undefined;
+    onClick?: () => void;
 }

@@ -13,4 +13,23 @@ export const ListHeaderContainer = styled(Box)`
     h1 {
         color: white;
     }
+
+    .logout-button {
+        position: absolute;
+
+        background-color: red;
+        color: white;
+
+        width: 20rem;
+
+        top: 5rem;
+        right: 5rem;
+
+        font-size: 1.2rem;
+    }
+
+    .logout-button:hover {
+        background-color: #ec4d4d;
+        color: white;
+    }
 `

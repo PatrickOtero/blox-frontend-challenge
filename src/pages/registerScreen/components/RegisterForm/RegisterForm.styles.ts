@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-export const RegisterFormContainer = styled(Box)`
+export const RegisterFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +18,20 @@ export const RegisterFormContainer = styled(Box)`
         font-size: 1.8rem;
         margin-top: -1.5rem;
         margin-bottom: 1rem;
+    }
+
+    .register-message {
+        position: absolute;
+        font-size: 2rem;
+
+        top: 20rem;
+
+        color: #f50a0ace;
+    }
+
+    .register-form-buttons {
+        display: flex;
+        gap: 3rem;
     }
 `
 
