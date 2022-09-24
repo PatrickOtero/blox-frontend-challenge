@@ -8,9 +8,7 @@
 
 ### OBS: Se ainda quiserem testar o que eu consegui fazer, na parte do login, para que seja redirecionado para a lista de unidades curriculares a página precisa ser atualizada (f5)
 
-### Link do deploy no Raiway: https://blox-frontend-challenge-production.up.railway.app/
-
-### Se o link estiver com problemas, teste localmente:
+### Por enquanto, teste localmente:
 
          - Clone este repositório localmente
          - Abra o vscode e vá até a pasta raíz (onde está a pasta src)
