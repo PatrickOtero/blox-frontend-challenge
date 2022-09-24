@@ -49,6 +49,15 @@ export const LoginFormInputs = styled(Box)`
     flex-direction: column;
 
     gap: 0.2rem;
+
+    input {
+        font-size: 1.7rem;
+        width: 43rem;
+    }
+
+    label {
+        font-size: 1.7rem;
+    }
 `
 
 export const FormLoginButtons = styled(Box)`
@@ -56,4 +65,10 @@ export const FormLoginButtons = styled(Box)`
     gap: 3rem;
 
     margin-top: 4rem;
+
+    button {
+        width: 20rem;
+        height: 5rem;
+        font-size: 1.4rem;
+    }
 `

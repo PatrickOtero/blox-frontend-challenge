@@ -6,19 +6,22 @@ export const api = axios.create({
     baseURL: serverUrl,
 });
 
-// export const apiAuth = axios.create({
-//     baseURL: localUrl,
-// })
+export const apiAuth = axios.create({
+    baseURL: serverUrl,
+})
 
-// apiAuth.interceptors.request.use((config) => {
-//     const storageToken = localStorage.getItem("token");
-//     const token = storageToken.slice(1, storageToken.length-1)
+apiAuth.interceptors.request.use((config) => {
+    const storageToken = localStorage.getItem("Token");
+    const token = storageToken?.slice(1, storageToken.length-1)
 
-//     if(token) {
-//         config.headers["Authorization"] = `Bearer ${token}`
-//     }
+    if(token?.length) {
+        if(config.headers)
+        {
+            config.headers.Authorization = `Bearer ${token}`
+        }
+    }
 
-//     return config;
-// }, (error) => {
-//     return Promise.reject(error);
-// });
+    return config;
+}, (error) => {
+    return Promise.reject(error);
+});

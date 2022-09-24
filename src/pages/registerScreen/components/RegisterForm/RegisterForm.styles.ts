@@ -10,21 +10,20 @@ export const RegisterFormContainer = styled.form`
     border-radius: 2rem;
 
     width: 50rem;
-    height: 45rem;
+    height: 55rem;
 
     padding: 2rem;
 
     b {
-        font-size: 1.8rem;
-        margin-top: -1.5rem;
-        margin-bottom: 1rem;
+        font-size: 2.3rem;
+        margin-bottom: 2rem;
     }
 
     .register-message {
         position: absolute;
         font-size: 2rem;
 
-        top: 20rem;
+        top: 17rem;
 
         color: #f50a0ace;
     }
@@ -39,21 +38,29 @@ export const RegisterFormInputs = styled(Box)`
     display: flex;
     flex-direction: column;
 
-    gap: 0.2rem;
+    gap: 1.5rem;
+
+    input {
+        width: 20rem;
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1.7rem;
+    }
 `
 
 export const RegisterFormCheckbox = styled(Box)`
     display: flex;
     gap: 1.2rem;
 
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+    margin-left: -9rem;
 
-    input {
-        margin-left: 1rem;
-    }
+    align-items: center;
 
     span {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: bold;
     }
 `
@@ -62,4 +69,16 @@ export const CpfBirthDate = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+`
+
+export const RegisterFormButtons = styled(Box)`
+    display: flex;
+    gap: 2rem;
+
+    button {
+        width: 20rem;
+        height: 4rem;
+
+        font-size: 1.4rem;
+    }
 `

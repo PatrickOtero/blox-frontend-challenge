@@ -1,8 +1,20 @@
-import Tabs from '@mui/material/Tabs';
+import { Box, Button } from '@mui/material';
 import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
+import Tabs from '@mui/material/Tabs';
+import { useNavigate } from 'react-router-dom';
+import useLoginContext from '../../../../../hooks/Login/useLoginContext';
 
 export default function ListHeaderButtons() {
+
+  const { removeToken, removeLoggedName } = useLoginContext()
+
+  const navigate = useNavigate()
+
+  const handleLogOut = () => {
+      removeToken()
+      removeLoggedName()
+      navigate("/");
+  }
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -29,8 +41,9 @@ export default function ListHeaderButtons() {
          label="Criar novo"
           sx={{
             fontSize: 12
-        }}/>
+          }}/>
       </Tabs>
+          <Button onClick={() => handleLogOut()}className="logout-button">Deslogar</Button>
     </Box>
   );
 }

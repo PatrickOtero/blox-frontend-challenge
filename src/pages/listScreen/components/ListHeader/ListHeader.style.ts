@@ -23,7 +23,7 @@ export const ListHeaderContainer = styled(Box)`
         width: 20rem;
 
         top: 5rem;
-        right: 5rem;
+        right: 7rem;
 
         font-size: 1.2rem;
     }

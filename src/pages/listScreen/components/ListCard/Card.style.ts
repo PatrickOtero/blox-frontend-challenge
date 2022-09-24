@@ -17,8 +17,6 @@ export const UpperContainer = styled(Box)`
     flex-direction: column;
     justify-content: center;
 
-    background-color: #4ebce7;
-
     span {
         color: white;
     }
@@ -45,8 +43,6 @@ export const MiddleContainer = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    background-color: #3c97bb;
 `
 
 export const MiddleContainerMain = styled(Box)`
@@ -81,6 +77,4 @@ export const BottomContainer = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    background-color: #4ebce7;
 `

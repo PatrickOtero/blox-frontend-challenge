@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import styled from "styled-components";
 
 export const ListContainer = styled(Box)`
@@ -10,8 +10,6 @@ export const ListMain = styled(Box)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    flex-wrap: wrap;
 `
 
 export const ListMainTitle = styled(Box)`
@@ -22,36 +20,66 @@ export const ListMainTitle = styled(Box)`
     padding: 2rem;
 
     .title-main {
+        position: relative;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         width: 100%;
 
-        .search-icon {
-        position: absolute;
-
-        width: 2rem;
-        
-        margin-left: 15rem;
-        margin-top: 3rem;
-        }
-    }
-
-    b {
+        b {
         font-size: 2.4rem;
-    }
-
-    div {
-        display: flex;
-        gap: 1rem;
-    }
+        }
+    }   
 
     .list-line {
         height: 1px;
         background-color: #0000003a;
 
         width: 100%;
+
+        margin-top: 1rem;
+    }
+`
+
+export const TitleInputs = styled(Box)`
+    display: flex;
+    align-items: center;
+
+    gap: 3rem;
+
+    margin-right: 10rem;
+
+    .search-input {
+        input {
+            width: 30rem;
+            font-size: 1.6rem;
+        }
+
+        label {
+            font-size: 1.6rem;
+        }            
+    }
+
+    .filter-input {
+        width: 50rem;
+
+        input {
+            font-size: 1.6rem;
+        }
+
+        label {
+            font-size: 1.6rem;
+        }
+    }
+
+    .search-icon {
+        position: absolute;
+
+        right: 50rem;
+        width: 2rem;
+        margin-top: 3rem;
     }
 `
 
@@ -64,18 +92,18 @@ export const ListMainIcons = styled(Box)`
 `
 
 export const ListMainCards = styled(Box)`
-    width: 100%;
-
     padding: 2rem;
 
     display: flex;
     flex-wrap: wrap;
+
+    gap: 3rem;
 `
 
 export const ListAboveBottomContainer = styled(Box)`
     display: flex;
     width: 100%;
-    margin-top: 33rem;
+    margin-top: 16.5rem;
 
     .megaphone-icon {
         background-color: #65cc98;

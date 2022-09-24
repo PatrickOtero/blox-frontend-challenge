@@ -1,59 +1,44 @@
-import LoginFormButton from "../../../../components/Button/Button"
-import LoginFormInput from "../../../../components/input/input"
-import { api } from "../../../../services/axios";
 import { FormLoginButtons, LoginFormContainer, LoginFormInputs, LoginFormLines } from "./LoginForm.style"
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocalStorage } from "react-use";
+import { TextField, Button } from "@mui/material";
+import useLoginContext from "../../../../hooks/Login/useLoginContext";
 
 export function LoginForm() {
-    const [token, setToken] = useLocalStorage<string>("Token", "")
-    const [loggedName, setLoggedName] = useLocalStorage<string>("UserName", "")
-    const [loginData, setLoginData] = useState<any>()
-    const [userName, setUserName] = useState<string>()
-    const [userPass, setUserPass] = useState<string>()
 
-    const handleUserLogin = async() => {
-        const body = {
-            username: userName,
-            password: userPass,
-            institution_id: "22"
-        }
-        try {
-            const response = await api.post('/v2/authentication/login', body);
+    const { handleUserLogin, token, loggedName, userName, setUserName, userPass, setUserPass } = useLoginContext();
+    
+    const navigate = useNavigate();
 
-                setToken(response.data.token)
-                setLoggedName(userName)
-                setLoginData(response);
-
-                setUserName("");
-                setUserPass("");
-            } catch (error: any) {
-                setLoginData(error.response.data);
+        const handleDirectUser = () => {
+            if (token?.length) {
+                navigate(`/list/${loggedName}`)
+            } else {
+                navigate("/")
             }
         }
+    
+        useEffect(() => {
+           handleDirectUser();
+        }, [token])
 
-        const navigate = useNavigate();
 
     return (
         <LoginFormContainer>
             <b>Seja bem vindo!</b>
             <LoginFormLines>
                 <div></div>
-                <b> Painel de acesso</b>
+                <b>Painel de acesso</b>
                 <div></div>
             </LoginFormLines>
            
             <LoginFormInputs>
-                <LoginFormInput value={userName} onChange={(e) => setUserName(e.target.value)}
-                label="Nome do usuário" variant="standard" size="medium"
-                fontSize="2"/>
-                <LoginFormInput value={userPass} onChange={(e) => setUserPass(e.target.value)} label="Senha" variant="standard" size="medium"
-                fontSize="2"/>
+                <TextField value={userName} onChange={e => setUserName(e.target.value)} variant="standard" label="Nome do usuário"/>
+                <TextField value={userPass} onChange={e => setUserPass(e.target.value)} variant="standard" label="Senha"/>
             </LoginFormInputs>
             <FormLoginButtons>
-                <LoginFormButton onClick={() => navigate("/register")} text="Registrar conta" width="20" fontSize="1.6" icon={false} size="large"/>
-                <LoginFormButton onClick={() => handleUserLogin()} text="Acessar" width="20" fontSize="1.6" icon={false} size="large"/>
+                <Button onClick={() => navigate("/register")} variant="contained">Registrar-se</Button>
+                <Button onClick={() => handleUserLogin()}variant="contained">Acessar</Button>
             </FormLoginButtons>
 
         </LoginFormContainer>

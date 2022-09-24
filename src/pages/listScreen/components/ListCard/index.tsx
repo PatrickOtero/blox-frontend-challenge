@@ -1,4 +1,3 @@
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,22 +7,16 @@ import { ListPageCardProps } from '../../../../@Types/components/ListPageCard';
 import {Avatar, IconButton} from "@mui/material"
 import MoreVertIcon from "@mui/icons-material/MoreVertOutlined"
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import { initialsObtainer } from '../../../../common/utils/utils';
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
 
-export default function ListPageCard({ cardDate }: ListPageCardProps) {
+export default function ListPageCard({ cardDate, descOne, id, edType, extremityColor, middleColor, titleImage, responsibles }: ListPageCardProps) {
+
   return (
     <CardContainer>
         <Card sx={{ minWidth: 275, borderRadius: 2 }}>
         <CardContent>
-            <UpperContainer>
+            <UpperContainer sx={{ backgroundColor: `${extremityColor}`}}>
                 <Typography sx={{ color: "white" }}>Data Limite</Typography>
                 <Typography sx={{ fontSize: 16, color: "white" }} gutterBottom>
                 {cardDate}
@@ -35,21 +28,21 @@ export default function ListPageCard({ cardDate }: ListPageCardProps) {
                     <TaskAltIcon fontSize='large'/>
                 </IconButton>
             </UpperContainer>
-            <MiddleContainer>
+            <MiddleContainer sx={{ backgroundColor: `${middleColor}`}}>
                 <MiddleContainerMain>
-                    <Avatar alt="blox image" sx={{bgcolor: "#4ebce7"}}>Blox</Avatar>
-                    <Typography className='middle-container-main-span'>Competências do Liderança Motivacional</Typography>
+                    <Avatar src={`${titleImage}`} alt="blox imagem" sx={{bgcolor: "#4ebce7"}}/>
+                    <Typography className='middle-container-main-span'>{descOne}</Typography>
                 </MiddleContainerMain>
                 <MiddleContainerBottom>
-                    <Typography className='middle-container-bottom-span'>ID<br/>2714</Typography>
-                    <Typography className='middle-container-bottom-span'>Modalidade<br/>EAD</Typography>
+                    <Typography className='middle-container-bottom-span'>ID<br/>{id}</Typography>
+                    <Typography className='middle-container-bottom-span'>Modalidade<br/>{edType}</Typography>
                 </MiddleContainerBottom>
             </MiddleContainer>
             </CardContent>
-        <BottomContainer>
+        <BottomContainer sx={{ backgroundColor: `${extremityColor}`}}>
             <CardActions>
                 <Avatar sx={{ bgcolor: "#647fc9", border: 1, fontSize: 18 }} aria-label="recipe">
-                    JM
+                    {initialsObtainer(responsibles.name)}
                 </Avatar>
             </CardActions>
         </BottomContainer>

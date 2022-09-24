@@ -33,13 +33,13 @@ export default function ListBottomButtons() {
             fontSize: 12
         }}/>
         <Tab className="list-tab-button"
-         value="two"
+         value="three"
          label="Aprovado"
           sx={{
             fontSize: 12
         }}/>
         <Tab className="list-tab-button"
-         value="two"
+         value="four"
          label="Arquivados"
           sx={{
             fontSize: 12
