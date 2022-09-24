@@ -8,7 +8,9 @@
 
 ### OBS: Se ainda quiserem testar o que eu consegui fazer, na parte do login, para que seja redirecionado para a lista de unidades curriculares a página precisa ser atualizada (f5)
 
-### Por enquanto, teste localmente:
+### Link para testar online: https://blox-challenge-patrick-otero.netlify.app/
+
+### Se quiser testar localmente:
 
          - Clone este repositório localmente
          - Abra o vscode e vá até a pasta raíz (onde está a pasta src)
