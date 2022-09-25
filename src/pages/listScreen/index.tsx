@@ -16,7 +16,7 @@ export function CurricularUnitsListPage() {
 
     const [ cardDetails, setCardDetails ] = useState<boolean>(false)
 
-    const { handleGetListData, handleStoreListData, listData, storedList, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
+    const { handleGetListData, handleStoreListData, listData, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
 
     const { listFilterOptions } = useDataHelper();
 
@@ -57,7 +57,7 @@ export function CurricularUnitsListPage() {
        <ListContainer>
         { cardDetails &&
          <div className='list-card-details-backdrop'>
-            <ExpandedCard/>
+            <ExpandedCard setCardDetails={setCardDetails}/>
          </div>
          }
         <ListHeader/>

@@ -1,8 +1,9 @@
 import { Avatar, Card, IconButton } from "@mui/material";
 import { Lamp, X } from "phosphor-react";
+import { ExpandedCardProps } from "../../../../@Types/components/ExpandedCard";
 import { CardMiddle, CardMiddleBottom, CardMiddleTop, CardTop, ExpandedCardContainer } from "./ExpandedCard.style";
 
-export function ExpandedCard() {
+export function ExpandedCard({ setCardDetails }: ExpandedCardProps) {
     return (
         <ExpandedCardContainer>
             <Card>
@@ -10,7 +11,7 @@ export function ExpandedCard() {
                     <Avatar className="subject-icon">Blox</Avatar>
                     <h1 className="subject-title">3D para Design</h1>
                     <IconButton className="close-icon-button">
-                        <X className="close-icon"/>
+                        <X className="close-icon" onClick={() => setCardDetails(false)}/>
                     </IconButton>
                 </CardTop>
                 <CardMiddle>
