@@ -5,12 +5,16 @@ import { ListDashes, MagnifyingGlass, SquareHalfBottom, SquaresFour } from "phos
 import { useEffect } from "react";
 import { useDataHelper } from '../../common/hooks/data';
 import useListContext from '../../hooks/List/useListContext';
+import { ExpandedCard } from './components/ExpandedCard';
 import ListBottomButtons from "./components/ListBottom";
 import ListPageCard from "./components/ListCard";
 import { ListHeader } from "./components/ListHeader";
 import { ListAboveBottomButtonsContainer, ListAboveBottomContainer, ListBottom, ListContainer, ListMain, ListMainCards, ListMainIcons, ListMainTitle, TitleInputs } from "./List.styles";
+import { useState } from "react";
 
 export function CurricularUnitsListPage() {
+
+    const [ cardDetails, setCardDetails ] = useState<boolean>(false)
 
     const { handleGetListData, handleStoreListData, listData, storedList, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
 
@@ -51,6 +55,11 @@ export function CurricularUnitsListPage() {
 
     return (
        <ListContainer>
+        { cardDetails &&
+         <div className='list-card-details-backdrop'>
+            <ExpandedCard/>
+         </div>
+         }
         <ListHeader/>
         <ListMain>
             <ListMainTitle>
@@ -94,7 +103,7 @@ export function CurricularUnitsListPage() {
             </ListMainIcons>
             <ListMainCards>
                 {listData?.length && listData.map((item: any) => (
-                    <ListPageCard responsibles={responsibles} key={item.id} cardDate={item.date_limit_edition ? item.date_limit_edition : "Sem data limite"} descOne={item.title} id={item.id} edType={item.modality} extremityColor={item.cached_blox.knowledge_area.color1} middleColor={item.cached_blox.knowledge_area.color2} titleImage={item.cached_blox.blox_profile.icon_url ? item.cached_blox.blox_profile.icon_url : ""}/>
+                    <ListPageCard setCardDetails={setCardDetails} responsibles={responsibles} key={item.id} cardDate={item.date_limit_edition ? item.date_limit_edition : "Sem data limite"} descOne={item.title} id={item.id} edType={item.modality} extremityColor={item.cached_blox.knowledge_area.color1} middleColor={item.cached_blox.knowledge_area.color2} titleImage={item.cached_blox.blox_profile.icon_url ? item.cached_blox.blox_profile.icon_url : ""}/>
                 ))}
                 {!listData?.length && <h1>A LISTA ESTÁ VAZIA</h1>}
             </ListMainCards>

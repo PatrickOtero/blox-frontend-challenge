@@ -4,6 +4,22 @@ import styled from "styled-components";
 export const ListContainer = styled(Box)`
     min-width: 100vw;
     min-height: 100vh;
+
+    .list-card-details-backdrop {
+        position: fixed;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+
+        background-color: #0000004b;
+    }
 `
 
 export const ListMain = styled(Box)`

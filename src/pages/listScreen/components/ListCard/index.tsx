@@ -1,19 +1,18 @@
+import MoreVertIcon from "@mui/icons-material/MoreVertOutlined";
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import { Avatar, IconButton } from "@mui/material";
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { BottomContainer, CardContainer, MiddleContainer, MiddleContainerBottom, MiddleContainerMain, UpperContainer } from './Card.style';
 import { ListPageCardProps } from '../../../../@Types/components/ListPageCard';
-import {Avatar, IconButton} from "@mui/material"
-import MoreVertIcon from "@mui/icons-material/MoreVertOutlined"
-import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { initialsObtainer } from '../../../../common/utils/utils';
+import { BottomContainer, CardContainer, MiddleContainer, MiddleContainerBottom, MiddleContainerMain, UpperContainer } from './Card.style';
 
-
-export default function ListPageCard({ cardDate, descOne, id, edType, extremityColor, middleColor, titleImage, responsibles }: ListPageCardProps) {
+export default function ListPageCard({ cardDate, descOne, id, edType, extremityColor, middleColor, titleImage, responsibles, setCardDetails }: ListPageCardProps) {
 
   return (
-    <CardContainer>
+    <CardContainer onClick={() => setCardDetails(true)}>
         <Card sx={{ minWidth: 275, borderRadius: 2 }}>
         <CardContent>
             <UpperContainer sx={{ backgroundColor: `${extremityColor}`}}>

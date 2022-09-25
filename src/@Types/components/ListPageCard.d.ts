@@ -9,4 +9,6 @@ export interface ListPageCardProps {
     titleImage: string;
 
     responsibles: any
+
+    setCardDetails: React.Dispatch<React.SetStateAction<boolean>>;
 }

@@ -3,6 +3,13 @@ import {Box} from "@mui/material"
 
 export const CardContainer = styled(Box)`
     width: 50rem;
+    cursor: pointer;
+
+    transition: 200ms;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 
 export const UpperContainer = styled(Box)`
