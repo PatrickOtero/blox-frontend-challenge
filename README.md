@@ -6,8 +6,6 @@
 
 ### Importante: Independente de não ter terminado, eu continuarei trabalhando neste desafio até terminá-lo, tendo em vista que devido à minha participação em outros processos seletivos, só consegui me dedicar ao projeto de fato no início do dia 19/09 (dia da entrega do desafio) , além do fato de aplicar conhecimentos novos, como cUrls, material-ui, styled-components e typescript, dos quais eu não possuia domínio. Ao menos, eu tentei, e, melhor ainda, assisti muitas aulas e aprendi muita coisa nova ao tentar fazer este desafio.
 
-### Desafio quase terminado. Restam os filtros de busca.
-
 ### Link para testar online: https://blox-challenge-patrick-otero.netlify.app/
 
 ### Se quiser testar localmente:
@@ -19,7 +17,18 @@
 
 # Obrigado Blox pela oportunidade que me deu.
 
-## Tecnologias que devem ser usadas no projeto:
+## Tecnologias que foram exigidas no projeto:
+
+        - Typescript (obrigatório)
+        - Jest (extra)
+        - React (obrigatório)
+        - Material-ui (obrigatório)
+        - Styled components (extra)
+        - React-router-dom (obrigatório)
+        - Context-api (obrigatório)
+        - Web-hooks (extra)
+        
+## Tecnologias que usei até agora:
 
         - Typescript
         - React
@@ -29,6 +38,10 @@
         - React-use
         - Axios
         - Context-api
-        - Web-hooks
         - phosphor-icons
+        
+ ## O quÊ ainda falta:
+
+         - Implementar testes com Jest.
+         - Aplicar os filtros de busca.
 
