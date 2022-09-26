@@ -40,7 +40,7 @@
         - Context-api
         - phosphor-icons
         
- ## O quÊ ainda falta:
+ ## O que ainda falta:
 
          - Implementar testes com Jest.
          - Aplicar os filtros de busca.
