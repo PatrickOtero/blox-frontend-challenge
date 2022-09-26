@@ -8,6 +8,10 @@
 
 ### Link para testar online: https://blox-challenge-patrick-otero.netlify.app/
 
+        - Login
+              - Username: patrick@gmail.com
+              - Password: patrick123 
+
 ### Se quiser testar localmente:
 
          - Clone este repositório localmente
