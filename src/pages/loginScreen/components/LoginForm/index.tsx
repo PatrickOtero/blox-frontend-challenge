@@ -40,7 +40,7 @@ export function LoginForm() {
            
             <LoginFormInputs>
                 <TextField value={userName} onChange={e => setUserName(e.target.value)} variant="standard" label="Nome do usuário"/>
-                <TextField value={userPass} onChange={e => setUserPass(e.target.value)} variant="standard" label="Senha"/>
+                <TextField type="password" value={userPass} onChange={e => setUserPass(e.target.value)} variant="standard" label="Senha"/>
             </LoginFormInputs>
             <FormLoginButtons>
                 <Button onClick={() => navigate("/register")} variant="contained">Registrar-se</Button>
