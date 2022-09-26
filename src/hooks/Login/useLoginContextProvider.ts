@@ -8,7 +8,13 @@ const useLoginContextProvider = () => {
     const [userPass, setUserPass] = useState<string>()
     const [ loggedName, setLoggedName, removeLoggedName ] = useLocalStorage<string>("UserName", "")
 
+    const [loginMessages, setLoginMessages ] = useState<string>("");
+
+    const [ loading, setLoading ] = useState<boolean>(false)
+
   const handleUserLogin = async() => {
+    setLoading(true)
+    setLoginMessages("");
     const body = {
         username: userName,
         password: userPass,
@@ -23,8 +29,18 @@ const useLoginContextProvider = () => {
 
             setUserName("");
             setUserPass("");
+
+            setLoading(false)
+
+            console.log(response.data)
         } catch (error: any) {
-            console.log(error.response.data);
+            console.log(error.response)
+            if (error.response.status === 400) {
+              setLoginMessages("Por favor, preencha algum campo")
+            } else if (error.response.status === 404) {
+              setLoginMessages("Credenciais incorretas");
+            }
+            setLoading(false)
         }
     }
 
@@ -39,7 +55,11 @@ const useLoginContextProvider = () => {
     handleUserLogin,
     loggedName,
     setLoggedName,
-    removeLoggedName
+    removeLoggedName,
+    loading,
+    setLoading,
+    loginMessages,
+    setLoginMessages
   }
 }
 

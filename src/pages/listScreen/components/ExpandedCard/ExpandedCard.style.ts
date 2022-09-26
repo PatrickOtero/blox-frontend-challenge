@@ -2,6 +2,18 @@ import { Box } from "@mui/system";
 import styled from "styled-components";
 
 export const ExpandedCardContainer = styled(Box)`
+    @keyframes showCardDetails {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    animation: showCardDetails 300ms;
+
     width: 80rem;
     height: 52rem;
 
@@ -16,9 +28,16 @@ export const CardTop = styled(Box)`
     width: 100%;
     height: 10rem;
 
-    background-color: #5260dd;
-
     padding-left: 3rem;
+
+    .title-and-close-button {
+        display: flex;
+
+        width: 100%;
+
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .subject-icon {
         position: relative;
@@ -27,24 +46,22 @@ export const CardTop = styled(Box)`
         height: 10rem;
 
         top: 3rem;
-
-        background-color: #3748dd;
     }
 
     .subject-title {
         color: white;
 
-        margin-top: 4rem;
         margin-left: 2rem;
+
+        font-size: 2.8rem;
     }
 
     .close-icon-button {
-
         width: 4rem;
         height: 4rem;
 
-        margin-left: 44rem;
-        margin-top: 1rem;
+        margin-bottom: 1.6rem;
+        margin-right: 2rem;
 
         .close-icon {
             width: 3rem;
@@ -125,7 +142,7 @@ export const CardMiddleBottom = styled(Box)`
         }
 
         span, p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         .knowledge-icon-container {
@@ -133,10 +150,6 @@ export const CardMiddleBottom = styled(Box)`
             align-items: center;
 
             gap: 1rem;
-
-            .knowledge-icon {
-                background-color: #3748dd;
-            }
         }
 
         .profile-icon-container {
@@ -146,4 +159,47 @@ export const CardMiddleBottom = styled(Box)`
                 gap: 1rem;
             }
     }
+        .competencies-container {
+            display: flex;
+            flex-direction: row;
+
+            gap: 1rem;
+
+            overflow-x: auto;
+            width: 30rem;
+
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 0.3rem 0.8rem;
+
+                font-size: 1.5rem;
+                color: #ffffff;
+
+                border-radius: 2rem;
+            }
+
+            .empty-competencies {
+                color: #000000;
+
+                font-size: 1.8rem;
+            }
+
+            &::-webkit-scrollbar {
+                height: 0.8rem;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 1rem;
+                background-color: #c6c6ecc2;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                border-radius: 1.5rem;
+                background-color: #b3b3e4c2;
+            }
+
+        }
 `

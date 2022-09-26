@@ -6,7 +6,7 @@ import useLoginContext from "../../../../hooks/Login/useLoginContext";
 
 export function LoginForm() {
 
-    const { handleUserLogin, token, loggedName, userName, setUserName, userPass, setUserPass } = useLoginContext();
+    const { handleUserLogin, token, loggedName, userName, setUserName, userPass, setUserPass, loginMessages } = useLoginContext();
     
     const navigate = useNavigate();
 
@@ -17,6 +17,11 @@ export function LoginForm() {
                 navigate("/")
             }
         }
+
+        useEffect(() => {
+            setUserName("")
+            setUserPass("")
+        }, [])
     
         useEffect(() => {
            handleDirectUser();
@@ -25,6 +30,7 @@ export function LoginForm() {
 
     return (
         <LoginFormContainer>
+            <b className="login-message">{loginMessages}</b>
             <b>Seja bem vindo!</b>
             <LoginFormLines>
                 <div></div>

@@ -10,9 +10,11 @@ export const RegisterFormContainer = styled.form`
     border-radius: 2rem;
 
     width: 50rem;
-    height: 55rem;
+    height: 62rem;
 
     padding: 2rem;
+
+    margin-top: 6rem;
 
     b {
         font-size: 2.3rem;
@@ -21,11 +23,30 @@ export const RegisterFormContainer = styled.form`
 
     .register-message {
         position: absolute;
-        font-size: 2rem;
+        font-size: 1.4rem;
 
-        top: 17rem;
+        top: 5.5rem;
+        left: 1rem;
+
+        width: 9rem;
 
         color: #f50a0ace;
+    }
+
+    .register-message-top {
+        position: absolute;
+        font-size: 2rem;
+
+        top: 14rem;
+        color: #f50a0ace;
+    }
+
+    .error-pass-confirmation {
+        width: 16rem;
+    }
+
+    .message-success {
+        top: 14rem
     }
 
     .register-form-buttons {
@@ -38,11 +59,17 @@ export const RegisterFormInputs = styled(Box)`
     display: flex;
     flex-direction: column;
 
-    gap: 1.5rem;
+    gap: 3rem;
+
+    .register-input {
+        position: relative;
+    }
 
     input {
         width: 20rem;
         font-size: 1.5rem;
+
+        /* height: 1rem; */
     }
 
     label {
@@ -55,6 +82,7 @@ export const RegisterFormCheckbox = styled(Box)`
     gap: 1.2rem;
 
     margin-bottom: 3rem;
+    margin-top: 2rem;
     margin-left: -9rem;
 
     align-items: center;

@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { useLocalStorage } from "react-use";
 import { apiAuth } from "../../services/axios"
+import useLoginContext from "../Login/useLoginContext"
 
 const useListContextProvider = () => {
     const [ listData, setListData ] = useState<any>()
-    const [ storedList, setStoredList ] = useLocalStorage<any>("StoredListData", "");
     const [ responsibles, setResponsibles ] = useState<any>()
     const [ page, setPage ] = useState<any>(1);
 
@@ -13,18 +12,10 @@ const useListContextProvider = () => {
     
     const [ inputFilters, setInputFilters ] = useState<any>()
 
-    const handleStoreListData = async () => {
-      try {
-        const response = await apiAuth.get(`/v1/public/institutions/22/blox_offerings`)
-
-        setStoredList(response.data)
-
-    } catch (error: any) {
-        console.log(error.response.data)
-    }
-    }
+    const { setLoading } = useLoginContext();
 
     const handleGetListData = async() => {
+      setLoading(true);
         try {
             const response = await apiAuth.get(`/v1/public/institutions/22/blox_offerings?page=${page}&per=5`)
 
@@ -36,8 +27,10 @@ const useListContextProvider = () => {
               setResponsibles(item.cached_blox.responsible)
             }
 
+            setLoading(false)
         } catch (error: any) {
             console.log(error.response.data)
+            setLoading(false)
         }
     }
 
@@ -53,9 +46,6 @@ const useListContextProvider = () => {
     setInputFilters,
     isFirstPage,
     isLastPage,
-    handleStoreListData,
-    storedList,
-    setStoredList
   }
 }
 

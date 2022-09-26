@@ -9,10 +9,10 @@ import { ListPageCardProps } from '../../../../@Types/components/ListPageCard';
 import { initialsObtainer } from '../../../../common/utils/utils';
 import { BottomContainer, CardContainer, MiddleContainer, MiddleContainerBottom, MiddleContainerMain, UpperContainer } from './Card.style';
 
-export default function ListPageCard({ cardDate, descOne, id, edType, extremityColor, middleColor, titleImage, responsibles, setCardDetails }: ListPageCardProps) {
+export default function ListPageCard({ cardDate, descOne, id, edType, extremityColor, middleColor, titleImage, responsibles, onClick }: ListPageCardProps) {
 
   return (
-    <CardContainer onClick={() => setCardDetails(true)}>
+    <CardContainer onClick={onClick}>
         <Card sx={{ minWidth: 275, borderRadius: 2 }}>
         <CardContent>
             <UpperContainer sx={{ backgroundColor: `${extremityColor}`}}>

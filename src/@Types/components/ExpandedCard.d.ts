@@ -1,3 +1,6 @@
+import { CardDetailsProps } from "./ListPageCard";
+
 export interface ExpandedCardProps {
-    setCardDetails: React.Dispatch<React.SetStateAction<boolean>>;
+    cardDetails: CardDetailsProps;
+    setCardDetailsModal: React.Dispatch<React.SetStateAction<boolean>>;
 }

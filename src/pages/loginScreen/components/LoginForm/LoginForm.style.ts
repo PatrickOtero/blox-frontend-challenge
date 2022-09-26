@@ -14,6 +14,13 @@ export const LoginFormContainer = styled(Box)`
 
     padding: 2rem;
 
+    .login-message {
+        position: absolute;
+
+        color: #2d359c;
+        top: 20rem;
+    }
+
     b {
         font-size: 2.3rem;
         margin-bottom: 1rem;

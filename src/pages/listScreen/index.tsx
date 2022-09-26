@@ -11,12 +11,17 @@ import ListPageCard from "./components/ListCard";
 import { ListHeader } from "./components/ListHeader";
 import { ListAboveBottomButtonsContainer, ListAboveBottomContainer, ListBottom, ListContainer, ListMain, ListMainCards, ListMainIcons, ListMainTitle, TitleInputs } from "./List.styles";
 import { useState } from "react";
+import { CardDetailsProps } from '../../@Types/components/ListPageCard';
+import useLoginContext from '../../hooks/Login/useLoginContext';
 
 export function CurricularUnitsListPage() {
 
-    const [ cardDetails, setCardDetails ] = useState<boolean>(false)
+    const [ cardDetailsModal, setCardDetailsModal ] = useState<boolean>(false)
+    const [ cardDetails, setCardDetails ] = useState<CardDetailsProps>({title: "", headerColor: "", modality: "", hours: 0, knowledgeArea: "", competencies: [], functionalArea: "", profile: "" })
 
-    const { handleGetListData, handleStoreListData, listData, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
+    const { handleGetListData, listData, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
+
+    const { loading } = useLoginContext()
 
     const { listFilterOptions } = useDataHelper();
 
@@ -25,11 +30,6 @@ export function CurricularUnitsListPage() {
     }
 
     useEffect(() => {
-        const handleLoadStoredData = async() => {
-            await handleStoreListData()
-        }
-
-        handleLoadStoredData()
         handleLoadListData()
     }, [])
 
@@ -55,9 +55,16 @@ export function CurricularUnitsListPage() {
 
     return (
        <ListContainer>
-        { cardDetails &&
-         <div className='list-card-details-backdrop'>
-            <ExpandedCard setCardDetails={setCardDetails}/>
+        {loading && (
+        <div className="backdrop">
+          <div className="login-loading">
+            <div className="login-loader"></div>
+          </div>
+        </div>
+      )}
+        { cardDetailsModal &&
+         <div className='backdrop'>
+            <ExpandedCard cardDetails={cardDetails} setCardDetailsModal={setCardDetailsModal}/>
          </div>
          }
         <ListHeader/>
@@ -103,7 +110,21 @@ export function CurricularUnitsListPage() {
             </ListMainIcons>
             <ListMainCards>
                 {listData?.length && listData.map((item: any) => (
-                    <ListPageCard setCardDetails={setCardDetails} responsibles={responsibles} key={item.id} cardDate={item.date_limit_edition ? item.date_limit_edition : "Sem data limite"} descOne={item.title} id={item.id} edType={item.modality} extremityColor={item.cached_blox.knowledge_area.color1} middleColor={item.cached_blox.knowledge_area.color2} titleImage={item.cached_blox.blox_profile.icon_url ? item.cached_blox.blox_profile.icon_url : ""}/>
+                    <ListPageCard onClick={() =>
+                    {
+                        setCardDetailsModal(true)
+                        setCardDetails({
+                            title: item.title,
+                            modality: item.modality,
+                            headerColor: item.cached_blox.knowledge_area.color1,
+                            hours: item.cached_blox.hours,
+                            knowledgeArea: item.cached_blox.knowledge_area.name,
+                            competencies: item.cached_blox.competences,
+                            functionalArea: item.cached_blox.functional_area.name,
+                            profile: item.cached_blox.blox_profile.name
+                        })
+                    }}
+                     responsibles={responsibles} key={item.id} cardDate={item.date_limit_edition ? item.date_limit_edition : "Sem data limite"} descOne={item.title} id={item.id} edType={item.modality} extremityColor={item.cached_blox.knowledge_area.color1} middleColor={item.cached_blox.knowledge_area.color2} titleImage={item.cached_blox.blox_profile.icon_url ? item.cached_blox.blox_profile.icon_url : ""}/>
                 ))}
                 {!listData?.length && <h1>A LISTA ESTÁ VAZIA</h1>}
             </ListMainCards>

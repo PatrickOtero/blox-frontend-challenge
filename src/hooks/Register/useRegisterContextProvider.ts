@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { IRegisterMessages } from '../../@Types/context/context'
 import { api } from '../../services/axios'
+import useLoginContext from '../Login/useLoginContext'
 
 const useRegisterContextProvider = () => {
     const [ registerName, setRegisterName ] = useState<any>()
@@ -9,16 +11,22 @@ const useRegisterContextProvider = () => {
     const [ registerPass, setRegisterPass ] = useState<any>()
     const [ registerConfirmPass, setRegisterConfirmPass ] = useState<any>()
 
-    const [registerData, setRegisterData ] = useState<any>()
-    const [registerMessage, setRegisterMessage ] = useState<any>("")
+    const [registerMessage, setRegisterMessage ] = useState<IRegisterMessages>({})
+
+    
+    const { setLoading } = useLoginContext();
 
     const handleUserRegister = async(e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-        e.preventDefault();
+        e.preventDefault()
 
-        setRegisterMessage("");
+        setRegisterMessage({})
+        setLoading(true)
+
 
         if (!registerName || !registerEmail || !registerPass || !registerConfirmPass || !registerCpf || !registerDate) {
-            setRegisterMessage("Os campos 'nome', 'email' e os de senha são obrigatórios")
+            setRegisterMessage({ fields: "Todos os campos são obrigatórios"})
+
+            setLoading(false)
             return
         }
 
@@ -39,7 +47,7 @@ const useRegisterContextProvider = () => {
             const response = await api.post('/auth', body
             );
 
-            setRegisterData(response.data)
+            setRegisterMessage(response.data)
             setRegisterName("");
             setRegisterCpf("");
             setRegisterDate("");
@@ -47,11 +55,13 @@ const useRegisterContextProvider = () => {
             setRegisterPass("");
             setRegisterConfirmPass("")
 
-            setRegisterMessage("Usuário cadastrado com sucesso")
+            setRegisterMessage({ success: "Usuário cadastrado com sucesso"})
            
+            setLoading(false)
         } catch (error: any) {
-            console.log(error)
+            console.log(error.response)
             setRegisterMessage(error.response.data.errors)
+            setLoading(false)
         }
     }
 
@@ -69,7 +79,8 @@ const useRegisterContextProvider = () => {
     setRegisterPass,
     registerConfirmPass,
     setRegisterConfirmPass,
-    registerMessage
+    registerMessage,
+    setRegisterMessage,
   }
 }
 

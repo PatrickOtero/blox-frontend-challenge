@@ -16,15 +16,17 @@ export interface ILoginContext {
     setUserName: React.Dispatch<React.SetStateAction<string | undefined>>;
     userPass: string | undefined;
     setUserPass: React.Dispatch<React.SetStateAction<string | undefined>>;
+    loginMessages: string;
+    setLoginMessages: React.Dispatch<React.SetStateAction<string>>;
+
+    loading: boolean;
+    setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IListContext {
     handleGetListData: () => Promise<void>;
     listData: any;
     setListData: React.Dispatch<React.SetStateAction<any>>;
-    handleStoreListData: () => Promise<void>;
-    storedList: any;
-    setStoredList: React.Dispatch<React.SetStateAction<any>>;
     responsibles: any;
     setResponsibles: React.Dispatch<React.SetStateAction<any>>;
     page: any;
@@ -33,6 +35,15 @@ export interface IListContext {
     setInputFilters: React.Dispatch<React.SetStateAction<any>>;
     isFirstPage: boolean;
     isLastPage: boolean;
+}
+
+export interface IRegisterMessages {
+    success?: string;
+
+    cpf?: string[];
+    email?: string[];
+    password_confirmation?: string[];
+    fields?: string;
 }
 
 export interface IRegisterContext {
@@ -49,5 +60,6 @@ export interface IRegisterContext {
     setRegisterPass: React.Dispatch<React.SetStateAction<any>>;
     registerConfirmPass: any;
     setRegisterConfirmPass: React.Dispatch<React.SetStateAction<any>>;
-    registerMessage: any;
+    registerMessage: IRegisterMessages;
+    setRegisterMessage: React.Dispatch<React.SetStateAction<IRegisterMessages>>;
 }

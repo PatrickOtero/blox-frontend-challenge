@@ -5,7 +5,7 @@ export const ListContainer = styled(Box)`
     min-width: 100vw;
     min-height: 100vh;
 
-    .list-card-details-backdrop {
+    .backdrop {
         position: fixed;
         display: flex;
 
@@ -19,6 +19,34 @@ export const ListContainer = styled(Box)`
         z-index: 2;
 
         background-color: #0000004b;
+
+        .login-loading {
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transform: scale(2);
+        }
+
+        @keyframes rotation {
+            to {
+                 transform: rotate(1turn);
+            }
+        }
+
+        .login-loader {
+            width: 50px;
+            height: 50px;
+
+            border: 6px solid blue;
+            border-top: 6px solid #3ba5ec;
+            border-radius: 50%;
+
+            animation: rotation 1s infinite;
+        }
     }
 `
 

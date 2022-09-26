@@ -10,5 +10,24 @@ export interface ListPageCardProps {
 
     responsibles: any
 
-    setCardDetails: React.Dispatch<React.SetStateAction<boolean>>;
+    onClick: () => void;
+}
+
+interface ICardDetailsCompetencies {
+    description: string | undefined;
+    icon_url: string | undefined;
+    id: number | undefined;
+    name: string | undefined;
+}
+
+export interface CardDetailsProps {
+    title: string;
+    modality: string;
+    hours: number;
+    knowledgeArea: string;
+    competencies: ICardDetailsCompetencies[]
+    functionalArea: string;
+    profile: string;
+
+    headerColor: string;
 }
