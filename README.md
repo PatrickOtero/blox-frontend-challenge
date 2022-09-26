@@ -4,7 +4,7 @@
 
 ## Progresso do projeto: Projeto não terminado antes do prazo estipulado.
 
-### Importante: Independente de não ter terminado, eu continuarei trabalhando neste desafio até terminá-lo, tendo em vista que devido à minha participação em outros processos seletivos, só consegui me dedicar ao projeto de fato no início do dia de hoje, além do fato de aplicar conhecimentos novos, como cUrls, material-ui, styled-components e typescript, dos quais eu não possuia domínio. Ao menos, eu tentei, e, melhor ainda, assisti muitas aulas e aprendi muita coisa nova ao tentar fazer este desafio.
+### Importante: Independente de não ter terminado, eu continuarei trabalhando neste desafio até terminá-lo, tendo em vista que devido à minha participação em outros processos seletivos, só consegui me dedicar ao projeto de fato no início do dia 19/09 (dia da entrega do desafio) , além do fato de aplicar conhecimentos novos, como cUrls, material-ui, styled-components e typescript, dos quais eu não possuia domínio. Ao menos, eu tentei, e, melhor ainda, assisti muitas aulas e aprendi muita coisa nova ao tentar fazer este desafio.
 
 ### OBS: Se ainda quiserem testar o que eu consegui fazer, na parte do login, para que seja redirecionado para a lista de unidades curriculares a página precisa ser atualizada (f5)
 
