@@ -6,6 +6,8 @@
 
 ### Importante: Independente de não ter terminado, eu continuarei trabalhando neste desafio até terminá-lo, tendo em vista que devido à minha participação em outros processos seletivos, só consegui me dedicar ao projeto de fato no início do dia 19/09 (dia da entrega do desafio) , além do fato de aplicar conhecimentos novos, como cUrls, material-ui, styled-components e typescript, dos quais eu não possuia domínio. Ao menos, eu tentei, e, melhor ainda, assisti muitas aulas e aprendi muita coisa nova ao tentar fazer este desafio.
 
+### - Fiquem à vontade para ver o código e sugerir correções, melhorias ou dar conselhos sobre qualquer coisa. Todo aprendizado é bem vindo.
+
 ### Link para testar online: https://blox-challenge-patrick-otero.netlify.app/
 
 ### Assim que entrar no site, o formulário de login aparecerá:
@@ -43,10 +45,12 @@
         - React-use
         - Axios
         - Context-api
-        - phosphor-icons
-        
+        - phosphor-icon
+  
  ## O que ainda falta:
 
          - Implementar testes com Jest.
-         - Aplicar os filtros de busca.
 
+
+
+### OBS: Não implementei filtros por status por não ter conseguido encontrar informações de todos os status diferentes na respectiva resposta do servidor, onde só é possível ver um tipo de status em todos os items do array: "Accepted", por isso achei que não faria sentido configurar uma filtragem de um único tipo.
