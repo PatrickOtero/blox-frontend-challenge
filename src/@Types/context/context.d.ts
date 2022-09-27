@@ -34,9 +34,9 @@ export interface IListContext {
     setResponsibles: React.Dispatch<React.SetStateAction<any>>;
     page: number;
     setPage: React.Dispatch<React.SetStateAction<number>>;
-    inputFilters: string;
+    inputFilters: string | undefined;
     setInputFilters: React.Dispatch<React.SetStateAction<string>>;
-    searchInput: string;
+    searchInput: string | undefined;
     setSearchInput: React.Dispatch<React.SetStateAction<string>>;
     isFirstPage: boolean;
     isLastPage: boolean;
@@ -47,24 +47,25 @@ export interface IRegisterMessages {
 
     cpf?: string[];
     email?: string[];
+    password?: string[];
     password_confirmation?: string[];
-    fields?: string;
+    fields?: string | undefined;
 }
 
 export interface IRegisterContext {
     handleUserRegister: (e: React.FormEvent<HTMLFormElement>) => Promise<void>;
-    registerName: any;
-    setRegisterName: React.Dispatch<React.SetStateAction<any>>;
-    registerCpf: any;
-    setRegisterCpf: React.Dispatch<React.SetStateAction<any>>;
-    registerDate: any;
-    setRegisterDate: React.Dispatch<React.SetStateAction<any>>;
-    registerEmail: any;
-    setRegisterEmail: React.Dispatch<React.SetStateAction<any>>;
-    registerPass: any;
-    setRegisterPass: React.Dispatch<React.SetStateAction<any>>;
-    registerConfirmPass: any;
-    setRegisterConfirmPass: React.Dispatch<React.SetStateAction<any>>;
+    registerName: string | undefined;
+    setRegisterName: React.Dispatch<React.SetStateAction<string>>;
+    registerCpf: string | undefined;
+    setRegisterCpf: React.Dispatch<React.SetStateAction<string>>;
+    registerDate: string | undefined;
+    setRegisterDate: React.Dispatch<React.SetStateAction<string>>;
+    registerEmail: string | undefined;
+    setRegisterEmail: React.Dispatch<React.SetStateAction<string>>;
+    registerPass: string | undefined;
+    setRegisterPass: React.Dispatch<React.SetStateAction<string>>;
+    registerConfirmPass: string | undefined;
+    setRegisterConfirmPass: React.Dispatch<React.SetStateAction<string>>;
     registerMessage: IRegisterMessages;
     setRegisterMessage: React.Dispatch<React.SetStateAction<IRegisterMessages>>;
 }

@@ -56,6 +56,11 @@ export const RegisterFormContainer = styled.form`
         color: ${props => props.theme.fontColor};
     }
 
+    .error-pass {
+        width: 100%;
+        font-size: 1.1rem;
+    }
+
     .error-pass-confirmation {
         width: 16rem;
     }
@@ -83,7 +88,7 @@ export const RegisterFormInputs = styled(Box)`
 
     input {
         width: 42rem;
-        font-size: 1.2rem;
+        font-size: 1.8rem;
 
         color: ${props => props.theme.fontColor};
         border: 1px solid ${props => props.theme.fontColor};

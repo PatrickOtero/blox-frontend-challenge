@@ -29,27 +29,28 @@ export function RegisterForm() {
             <b>Quero me cadastrar</b>
             <RegisterFormInputs>
                 <div className="register-input">
-                    <TextField value={registerName} onChange={(e) => setRegisterName(e.target.value)} variant="outlined" label="Nome"/>
+                    <TextField size="small" value={registerName} onChange={(e) => setRegisterName(e.target.value)} variant="filled" label="Nome"/>
                 </div>
                 <CpfBirthDate>
                     <div className="register-input">
-                        <TextField value={registerCpf} onChange={(e) => setRegisterCpf(e.target.value)} variant="outlined" label="CPF"/>
+                        <TextField size="small" value={registerCpf} onChange={(e) => setRegisterCpf(e.target.value)} variant="filled" label="CPF"/>
                         {registerMessage.cpf && <b className="register-message error-cpf">{registerMessage.cpf}</b>}
                     </div>
                     <div className="register-input">
-                    <TextField value={registerDate} onChange={(e) => setRegisterDate(e.target.value)}
-                    variant="outlined" label="" type="date"/>
+                    <TextField size="small" value={registerDate} onChange={(e) => setRegisterDate(e.target.value)}
+                    variant="filled" label="" type="date"/>
                     </div>
                 </CpfBirthDate>
                 <div className="register-input">
-                    <TextField value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} variant="outlined" label="E-mail"/>
+                    <TextField size="small" value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} variant="filled" label="E-mail"/>
                     {registerMessage.email && <b className="register-message error-email">{registerMessage.email}</b>}
                 </div>
                 <div className="register-input">
-                    <TextField value={registerPass} onChange={(e) => setRegisterPass(e.target.value)} variant="outlined" label="Crie sua senha" type="password"/>
+                    <TextField size="small" value={registerPass} onChange={(e) => setRegisterPass(e.target.value)} variant="filled" label="Crie sua senha" type="password"/>
+                    {registerMessage.password && <b className="register-message error-pass">{registerMessage.password}</b>}
                 </div>
                 <div className="register-input">
-                    <TextField value={registerConfirmPass} onChange={(e) => setRegisterConfirmPass(e.target.value)} variant="outlined" label="Confirme sua senha" type="password"/>
+                    <TextField size="small" value={registerConfirmPass} onChange={(e) => setRegisterConfirmPass(e.target.value)} variant="filled" label="Confirme sua senha" type="password"/>
                     {registerMessage.password_confirmation && <b className="register-message error-pass-confirmation">{registerMessage.password_confirmation}</b>}
                 </div>
             </RegisterFormInputs>

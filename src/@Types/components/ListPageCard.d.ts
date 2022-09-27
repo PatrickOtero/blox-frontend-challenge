@@ -1,8 +1,8 @@
 export interface ListPageCardProps {
-    cardDate?: string | undefined;
-    descOne?: string | undefined;
-    id?: string | undefined;
-    edType: string | undefined;
+    cardDate?: string;
+    descOne?: string;
+    id?: string;
+    edType: string;
 
     extremityColor: string;
     middleColor: string;
@@ -14,10 +14,10 @@ export interface ListPageCardProps {
 }
 
 interface ICardDetailsCompetencies {
-    description: string | undefined;
-    icon_url: string | undefined;
-    id: number | undefined;
-    name: string | undefined;
+    description: string;
+    icon_url: string;
+    id: number;
+    name: string;
 }
 
 export interface CardDetailsProps {

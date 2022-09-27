@@ -33,7 +33,7 @@ const useRegisterContextProvider = () => {
         const body = {
             institution_id: "22",
             name: registerName,
-            username: registerEmail,
+            username: registerName,
             email: registerEmail,
             password: registerPass,
             password_confirmation: registerConfirmPass,

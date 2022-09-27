@@ -1,11 +1,9 @@
 import { ReactNode } from "react";
 import useListContext from "../../../hooks/List/useListContext";
 import ListPageCard from "../components/ListCard";
+import { IUseCardList } from "../../../@Types/hooks/useCardList"
 
-interface IUseCardList {
-    setCardDetailsModal: React.Dispatch<React.SetStateAction<boolean>>
-    setCardDetails: React.Dispatch<React.SetStateAction<any>>
-}
+
 
 const useCardList = ({setCardDetailsModal, setCardDetails}: IUseCardList) => {
     const { completeListData, listData, responsibles } = useListContext();
