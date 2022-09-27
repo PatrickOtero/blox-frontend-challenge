@@ -53,4 +53,4 @@
 
 
 
-### OBS: Não implementei filtros por status por não ter conseguido encontrar informações de todos os status diferentes na respectiva resposta do servidor, onde só é possível ver um tipo de status em todos os items do array: "Accepted", por isso achei que não faria sentido configurar uma filtragem de um único tipo.
+### OBS: Não implementei filtros por status por não ter conseguido encontrar informações de todos os status diferentes na respectiva resposta do servidor, onde só é possível ver um tipo de status em todos os itens do array: "Accepted", por isso achei que não faria sentido configurar uma filtragem de um único tipo.
