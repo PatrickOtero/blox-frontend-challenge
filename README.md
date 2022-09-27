@@ -12,8 +12,8 @@
 
 ### Assim que entrar no site, o formulário de login aparecerá:
         - Login
-              - Nome do usuário: patrick@gmail.com
-              - senha: patrick123 
+              - Nome do usuário: alan
+              - senha: alan1234
 
 ### Se quiser testar localmente:
 
