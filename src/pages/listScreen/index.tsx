@@ -9,7 +9,7 @@ import { ExpandedCard } from './components/ExpandedCard';
 import ListBottomButtons from "./components/ListBottom";
 import ListPageCard from "./components/ListCard";
 import { ListHeader } from "./components/ListHeader";
-import { ListAboveBottomButtonsContainer, ListAboveBottomContainer, ListBottom, ListContainer, ListMain, ListMainCards, ListMainIcons, ListMainTitle, TitleInputs } from "./List.styles";
+import { ListAboveBottomButtonsContainer, ListAboveBottomContainer, ListContainer, ListMain, ListMainCards, ListMainIcons, ListMainTitle, TitleInputs } from "./List.styles";
 import { useState } from "react";
 import { CardDetailsProps } from '../../@Types/components/ListPageCard';
 import useLoginContext from '../../hooks/Login/useLoginContext';
@@ -73,20 +73,23 @@ export function CurricularUnitsListPage() {
                 <Box className="title-main">
                 <b>Arquivados</b>
                 <TitleInputs>
-                    <TextField className='search-input' variant='standard' label="Título ou ID" />
-                    <TextField className='filter-input' 
-                    value={inputFilters}
-                    onChange={(e) => setInputFilters(e.target.value)}
-                    variant='standard'
-                    select
-                    SelectProps={{ sx:{ fontSize: "1.5rem" }}}
-                    label="Filtrar">
-                        {listFilterOptions.map((option) => (
-                            <MenuItem sx={{ fontSize: "1.5rem"}} key={option} value={option}>
-                            {option}
-                            </MenuItem>
-                        ))}
-                    </TextField>
+                    <div className='id-title-container'>
+                        <TextField className='search-input' variant='standard' label="Título ou ID" />
+                        <MagnifyingGlass className='search-icon' size="26" color='blue'/>
+                    </div>
+                        <TextField className='filter-input' 
+                        value={inputFilters}
+                        onChange={(e) => setInputFilters(e.target.value)}
+                        variant='standard'
+                        select
+                        SelectProps={{ sx:{ fontSize: "1.5rem" }}}
+                        label="Filtrar">
+                            {listFilterOptions.map((option) => (
+                                <MenuItem sx={{ fontSize: "1.5rem"}} key={option} value={option}>
+                                {option}
+                                </MenuItem>
+                            ))}
+                        </TextField>
                 </TitleInputs>
                 </Box>
                     <div className="list-line"></div>
@@ -145,9 +148,9 @@ export function CurricularUnitsListPage() {
                 }}className="interrogation-icon"><QuestionMark fontSize="large"/></Avatar>
             </IconButton>
         </ListAboveBottomContainer>
-        <ListBottom>
+        <div>
             <ListBottomButtons/>
-        </ListBottom>
+        </div>
        </ListContainer>
     )
 }

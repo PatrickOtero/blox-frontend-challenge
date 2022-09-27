@@ -17,7 +17,7 @@ export const LoginFormContainer = styled(Box)`
     .login-message {
         position: absolute;
 
-        color: #2d359c;
+        color: ${props => props.theme.fontColor};
         top: 20rem;
     }
 
@@ -25,7 +25,7 @@ export const LoginFormContainer = styled(Box)`
         font-size: 2.3rem;
         margin-bottom: 1rem;
 
-        color: ${props => props.theme.lightBlack1};
+        color: ${props => props.theme.fontColor};
     }
 `
 
@@ -36,7 +36,7 @@ export const LoginFormLines = styled(Box)`
     margin-top: 4rem;
 
     div {
-        background-color: #0e0d0d3a;
+        background-color: ${props => props.theme.fontColor};
         width: 10rem;
         height: 1px;
     }
@@ -46,7 +46,7 @@ export const LoginFormLines = styled(Box)`
         margin-top: -1.5rem;
         margin-bottom: 1rem;
 
-        color: ${props => props.theme.lightBlack1};
+        color: ${props => props.theme.fontColor};
     }
     
 `
@@ -60,10 +60,14 @@ export const LoginFormInputs = styled(Box)`
     input {
         font-size: 1.7rem;
         width: 43rem;
+
+        color: ${props => props.theme.fontColor};
     }
 
     label {
         font-size: 1.7rem;
+
+        color: ${props => props.theme.fontColor};
     }
 `
 
@@ -77,5 +81,11 @@ export const FormLoginButtons = styled(Box)`
         width: 20rem;
         height: 5rem;
         font-size: 1.4rem;
+
+        background-color: ${props => props.theme.buttons};
+
+        &:hover {
+        background-color: ${props => props.theme.buttonsHover};
     }
+}
 `

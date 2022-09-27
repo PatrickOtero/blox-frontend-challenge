@@ -1,12 +1,13 @@
 export const defaultTheme = {
-    white: "#fff",
-
-    backgroundColor: "#dbe4eb",
+    header: "#5672eb",
     formColor: "#FFFFFF",
+    backgroundColor: "#dbe4eb",
+    exceptionalFontColor: "#FFFFFF",
+    logOutButton: "#ff0000",
+    logOutButtonHover: "#ec4d4d",
+    buttons: "#4187b6",
+    buttonsHover: "#3e93cc",
+    fontColor: "#000000",
+    inputBackground: "#dbe4eb"
 
-    lightBlack1: "#2c282871",
-
-    lightBlue1: "#0074D9",
-    lightBlue2: "#7FDBFF",
-    lightBlue3: "#39CCCC"
   } as const

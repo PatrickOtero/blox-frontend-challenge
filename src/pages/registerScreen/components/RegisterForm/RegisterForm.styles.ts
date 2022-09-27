@@ -19,6 +19,8 @@ export const RegisterFormContainer = styled.form`
     b {
         font-size: 2.3rem;
         margin-bottom: 2rem;
+
+        color: ${props => props.theme.fontColor};
     }
 
     .register-message {
@@ -30,7 +32,7 @@ export const RegisterFormContainer = styled.form`
 
         width: 9rem;
 
-        color: #f50a0ace;
+        color: ${props => props.theme.fontColor};
     }
 
     .register-message-top {
@@ -38,7 +40,7 @@ export const RegisterFormContainer = styled.form`
         font-size: 2rem;
 
         top: 14rem;
-        color: #f50a0ace;
+        color: ${props => props.theme.fontColor};
     }
 
     .error-pass-confirmation {
@@ -62,18 +64,22 @@ export const RegisterFormInputs = styled(Box)`
     gap: 3rem;
 
     .register-input {
+        display: flex;
         position: relative;
     }
 
     input {
-        width: 20rem;
-        font-size: 1.5rem;
+        width: 42rem;
+        font-size: 1.2rem;
 
-        /* height: 1rem; */
+        color: ${props => props.theme.fontColor};
+        border: 1px solid ${props => props.theme.fontColor};
     }
 
     label {
         font-size: 1.7rem;
+
+        color: ${props => props.theme.fontColor};
     }
 `
 
@@ -90,6 +96,8 @@ export const RegisterFormCheckbox = styled(Box)`
     span {
         font-size: 1.5rem;
         font-weight: bold;
+
+        color: ${props => props.theme.fontColor}
     }
 `
 
@@ -97,6 +105,13 @@ export const CpfBirthDate = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    input {
+        width: 18rem;
+        font-size: 1.5rem;
+
+        color: ${props => props.theme.fontColor};
+    }
 `
 
 export const RegisterFormButtons = styled(Box)`
@@ -108,5 +123,11 @@ export const RegisterFormButtons = styled(Box)`
         height: 4rem;
 
         font-size: 1.4rem;
+
+        background-color: ${props => props.theme.buttons};
+
+        &:hover {
+            background-color: ${props => props.theme.buttonsHover};
+        }
     }
 `

@@ -6,6 +6,7 @@ import { DefaultContainer } from "./default.style";
 export function DefaultLayout() {
 
     const { loading } = useLoginContext();
+
     return (
        <DefaultContainer>
             {loading && (

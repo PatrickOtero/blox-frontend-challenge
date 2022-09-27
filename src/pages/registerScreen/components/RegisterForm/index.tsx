@@ -28,20 +28,26 @@ export function RegisterForm() {
             {registerMessage.success && <b className="register-message-top">{registerMessage.success}</b>}
             <b>Quero me cadastrar</b>
             <RegisterFormInputs>
-                <TextField value={registerName} onChange={(e) => setRegisterName(e.target.value)} variant="outlined" label="Nome"/>
+                <div className="register-input">
+                    <TextField value={registerName} onChange={(e) => setRegisterName(e.target.value)} variant="outlined" label="Nome"/>
+                </div>
                 <CpfBirthDate>
                     <div className="register-input">
                         <TextField value={registerCpf} onChange={(e) => setRegisterCpf(e.target.value)} variant="outlined" label="CPF"/>
                         {registerMessage.cpf && <b className="register-message error-cpf">{registerMessage.cpf}</b>}
                     </div>
+                    <div className="register-input">
                     <TextField value={registerDate} onChange={(e) => setRegisterDate(e.target.value)}
                     variant="outlined" label="" type="date"/>
+                    </div>
                 </CpfBirthDate>
                 <div className="register-input">
                     <TextField value={registerEmail} onChange={(e) => setRegisterEmail(e.target.value)} variant="outlined" label="E-mail"/>
                     {registerMessage.email && <b className="register-message error-email">{registerMessage.email}</b>}
                 </div>
-                <TextField value={registerPass} onChange={(e) => setRegisterPass(e.target.value)} variant="outlined" label="Crie sua senha" type="password"/>
+                <div className="register-input">
+                    <TextField value={registerPass} onChange={(e) => setRegisterPass(e.target.value)} variant="outlined" label="Crie sua senha" type="password"/>
+                </div>
                 <div className="register-input">
                     <TextField value={registerConfirmPass} onChange={(e) => setRegisterConfirmPass(e.target.value)} variant="outlined" label="Confirme sua senha" type="password"/>
                     {registerMessage.password_confirmation && <b className="register-message error-pass-confirmation">{registerMessage.password_confirmation}</b>}

@@ -8,17 +8,25 @@ export const ListHeaderContainer = styled(Box)`
     gap: 2rem;
     padding: 2rem 0 0 2rem;
 
-    background-color: #5672eb;
+    background-color: ${props => props.theme.header};
+
+    .headerButtons {
+        background-color: ${props => props.theme.header};
+
+        .button-tab {
+           color: ${props => props.theme.exceptionalFontColor};
+        }
+    }
 
     h1 {
-        color: white;
+        color: ${props => props.theme.exceptionalFontColor};
     }
 
     .logout-button {
         position: absolute;
 
-        background-color: red;
-        color: white;
+        background-color: ${props => props.theme.logOutButton};
+        color: ${props => props.theme.exceptionalFontColor};
 
         width: 20rem;
 
@@ -29,7 +37,6 @@ export const ListHeaderContainer = styled(Box)`
     }
 
     .logout-button:hover {
-        background-color: #ec4d4d;
-        color: white;
+        background-color: ${props => props.theme.logOutButtonHover};
     }
 `

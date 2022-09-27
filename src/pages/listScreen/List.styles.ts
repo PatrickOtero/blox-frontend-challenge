@@ -74,6 +74,8 @@ export const ListMainTitle = styled(Box)`
 
         b {
         font-size: 2.4rem;
+
+        color: ${props => props.theme.fontColor};
         }
     }   
 
@@ -95,18 +97,32 @@ export const TitleInputs = styled(Box)`
 
     margin-right: 10rem;
 
+    .id-title-container {
+        position: relative;
+    }
+
     .search-input {
         input {
             width: 30rem;
             font-size: 1.6rem;
+
+            border-radius: 1rem;
+            background-color: ${props => props.theme.inputBackground};
         }
 
         label {
             font-size: 1.6rem;
+
+            color: ${props => props.theme.fontColor};
         }            
     }
 
     .filter-input {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+
         width: 50rem;
 
         input {
@@ -115,15 +131,15 @@ export const TitleInputs = styled(Box)`
 
         label {
             font-size: 1.6rem;
+            color: ${props => props.theme.fontColor};
         }
     }
 
     .search-icon {
         position: absolute;
 
-        right: 50rem;
-        width: 2rem;
-        margin-top: 3rem;
+        right: 1rem;
+        bottom: 0.5rem
     }
 `
 
@@ -133,6 +149,8 @@ export const ListMainIcons = styled(Box)`
     margin-top: 1rem;
 
     padding: 0 2rem;
+
+    color: ${props => props.theme.fontColor};
 `
 
 export const ListMainCards = styled(Box)`
@@ -171,16 +189,10 @@ export const ListAboveBottomButtonsContainer = styled(Box)`
 
         color: #FFFFFF;
 
-        background-color: #4187b6;
+        background-color: ${props => props.theme.buttons};
     }
 
     .pagination-button:hover {
-        color: #FFFFFF;
-        
-        background-color: #446e8a;
+        background-color: ${props => props.theme.buttonsHover};
     }
-`
-
-export const ListBottom = styled(Box)`
-    /* margin-top: 2.8rem ; */
 `

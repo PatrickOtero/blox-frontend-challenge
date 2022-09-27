@@ -14,7 +14,7 @@ export const ListBottomContainer = styled(Box)`
         justify-content: center;
         align-items: center;
 
-        background-color: #dbe4eb;
+        background-color: ${props => props.theme.backgroundColor};
 
         border-top: 0.2px #00000042 solid;
         box-shadow: 3px 5px 10px 1px black;
@@ -24,7 +24,7 @@ export const ListBottomContainer = styled(Box)`
         width: 40rem;
         margin-right: 12rem;
 
-        color: black;
+        color: ${props => props.theme.fontColor};
 
         border: 1px #00000065 solid;
         border-radius: 1rem;

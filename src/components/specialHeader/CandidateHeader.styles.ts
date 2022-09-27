@@ -14,21 +14,21 @@ export const CandidateHeaderContainer = styled(Box)`
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
 
-    background-color: ${props => props.theme.lightBlue1};
+    background-color: ${props => props.theme.header};
 
     h1 {
         font-size: 3rem;
-        color: ${props => props.theme.lightBlue2};
+        color: ${props => props.theme.fontColor};
     }
 
     h2 {
         font-size: 2.5rem;
-        color: ${props => props.theme.lightBlue2};
+        color: ${props => props.theme.fontColor};
     }
 
     h3 {
         font-size: 2.5rem;
-        color: ${props => props.theme.lightBlue3};
+        color: ${props => props.theme.fontColor};
 
         font-weight: 700;
     }

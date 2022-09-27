@@ -17,18 +17,15 @@ export default function ListHeaderButtons() {
   }
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box className='headerButtons' sx={{ width: '100%' }}>
       <Tabs
         aria-label="wrapped label tabs example"
         textColor='inherit'
-        TabIndicatorProps={{ sx: {backgroundColor: "white"}, }}
         sx={{
-            backgroundColor: "#5672eb",
-            color: "white",
             fontSize: 10,
         }}
       >
-        <Tab
+        <Tab className="button-tab"
           value="one"
           label="Lista"
           sx={{
@@ -36,7 +33,7 @@ export default function ListHeaderButtons() {
         }}
           wrapped
         />
-        <Tab
+        <Tab className="button-tab"
          value="two"
          label="Criar novo"
           sx={{
