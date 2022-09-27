@@ -8,6 +8,6 @@ export const defaultTheme = {
     buttons: "#4187b6",
     buttonsHover: "#3e93cc",
     fontColor: "#000000",
-    inputBackground: "#dbe4eb"
+    inputBackground: "#dbe4eb50"
 
   } as const
