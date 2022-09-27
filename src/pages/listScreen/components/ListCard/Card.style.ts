@@ -2,6 +2,19 @@ import styled from "styled-components";
 import {Box} from "@mui/material"
 
 export const CardContainer = styled(Box)`
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            margin-top: -10rem;
+        }
+
+        100% {
+            opacity: 1;
+            margin-top: 0rem;
+        }
+    }
+    animation: slideDown 700ms;
+
     width: 50rem;
     cursor: pointer;
 

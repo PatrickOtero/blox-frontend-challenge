@@ -2,6 +2,19 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 
 export const RegisterFormContainer = styled.form`
+    @keyframes slideToLeft {
+        0% {
+            opacity: 0;
+            margin-left: -40rem;
+        }
+
+        100% {
+            opacity: 1;
+            margin-left: 0rem;
+        }
+    }
+    animation: slideToLeft 1000ms;
+
     display: flex;
     flex-direction: column;
     align-items: center;

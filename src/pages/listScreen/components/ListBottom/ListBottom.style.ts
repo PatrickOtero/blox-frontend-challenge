@@ -8,7 +8,11 @@ export const ListBottomContainer = styled(Box)`
     align-items: center;
 
     .tabs-container {
+        position: fixed;
+
         height: 7rem;
+
+        bottom: 0;
 
         display: flex;
         justify-content: center;

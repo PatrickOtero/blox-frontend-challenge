@@ -7,31 +7,45 @@ import { useDataHelper } from '../../common/hooks/data';
 import useListContext from '../../hooks/List/useListContext';
 import { ExpandedCard } from './components/ExpandedCard';
 import ListBottomButtons from "./components/ListBottom";
-import ListPageCard from "./components/ListCard";
 import { ListHeader } from "./components/ListHeader";
 import { ListAboveBottomButtonsContainer, ListAboveBottomContainer, ListContainer, ListMain, ListMainCards, ListMainIcons, ListMainTitle, TitleInputs } from "./List.styles";
 import { useState } from "react";
 import { CardDetailsProps } from '../../@Types/components/ListPageCard';
 import useLoginContext from '../../hooks/Login/useLoginContext';
+import useCardList from './hook/useCardList';
 
 export function CurricularUnitsListPage() {
 
     const [ cardDetailsModal, setCardDetailsModal ] = useState<boolean>(false)
     const [ cardDetails, setCardDetails ] = useState<CardDetailsProps>({title: "", headerColor: "", modality: "", hours: 0, knowledgeArea: "", competencies: [], functionalArea: "", profile: "" })
 
-    const { handleGetListData, listData, responsibles, page, setPage, inputFilters, setInputFilters, isFirstPage, isLastPage } = useListContext();
+    const [ filter, setFilter ] = useState<string>("allCards");
+
+    
+    
+    const { handleGetListData, handleGetCompleteList, page, setPage, inputFilters, setInputFilters, searchInput, setSearchInput, isFirstPage, isLastPage, completeListData, listData } = useListContext();
 
     const { loading } = useLoginContext()
-
+    
     const { listFilterOptions } = useDataHelper();
-
+    
+    const { cardFilters } = useCardList({setCardDetailsModal, setCardDetails});
+    
     const handleLoadListData = async() => {
         await handleGetListData()
+    }
+
+    const handleLoadCompleteListData = async() => {
+        await handleGetCompleteList()
     }
 
     useEffect(() => {
         handleLoadListData()
     }, [])
+
+    useEffect(() => {
+        handleLoadCompleteListData()
+    }, [filter])
 
     const handleGoToPreviousPage = () => {
         if(page === 0) {
@@ -52,6 +66,23 @@ export function CurricularUnitsListPage() {
     useEffect(() => {
         handleLoadListData()
     }, [page])
+
+    const handleChangeFilter = () => {
+        if (!searchInput?.length) {
+            setFilter("allCards")
+            return
+        }
+
+        setFilter("cardTitleOrId")
+    }
+
+    const handleUseFiltersToRenderList = (filterName: string) => {
+        if (filterName === "cardTitleOrId") {
+            return cardFilters.cardTitleOrId(searchInput);
+        } else if (filterName === "allCards") {
+            return cardFilters.allCards();
+        }
+    }
 
     return (
        <ListContainer>
@@ -74,10 +105,13 @@ export function CurricularUnitsListPage() {
                 <b>Arquivados</b>
                 <TitleInputs>
                     <div className='id-title-container'>
-                        <TextField className='search-input' variant='standard' label="Título ou ID" />
-                        <MagnifyingGlass className='search-icon' size="26" color='blue'/>
+                        <TextField value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className='search-input' variant='standard' label="Título ou ID" />
+                        <IconButton>
+                            <MagnifyingGlass onClick={() => handleChangeFilter()}
+                            className='search-icon' size="26"/>
+                        </IconButton>
                     </div>
-                        <TextField className='filter-input' 
+                        <TextField className='filter-input'
                         value={inputFilters}
                         onChange={(e) => setInputFilters(e.target.value)}
                         variant='standard'
@@ -112,24 +146,8 @@ export function CurricularUnitsListPage() {
                 </div>        
             </ListMainIcons>
             <ListMainCards>
-                {listData?.length && listData.map((item: any) => (
-                    <ListPageCard onClick={() =>
-                    {
-                        setCardDetailsModal(true)
-                        setCardDetails({
-                            title: item.title,
-                            modality: item.modality,
-                            headerColor: item.cached_blox.knowledge_area.color1,
-                            hours: item.cached_blox.hours,
-                            knowledgeArea: item.cached_blox.knowledge_area.name,
-                            competencies: item.cached_blox.competences,
-                            functionalArea: item.cached_blox.functional_area.name,
-                            profile: item.cached_blox.blox_profile.name
-                        })
-                    }}
-                     responsibles={responsibles} key={item.id} cardDate={item.date_limit_edition ? item.date_limit_edition : "Sem data limite"} descOne={item.title} id={item.id} edType={item.modality} extremityColor={item.cached_blox.knowledge_area.color1} middleColor={item.cached_blox.knowledge_area.color2} titleImage={item.cached_blox.blox_profile.icon_url ? item.cached_blox.blox_profile.icon_url : ""}/>
-                ))}
-                {!listData?.length && <h1>A LISTA ESTÁ VAZIA</h1>}
+                {(listData?.length || completeListData?.length) && handleUseFiltersToRenderList(filter)}
+                {(!listData?.length || ( filter === "cardTitleOrId" && !completeListData?.length)) && <h1>A LISTA ESTÁ VAZIA</h1>}
             </ListMainCards>
         </ListMain>
         <ListAboveBottomContainer>

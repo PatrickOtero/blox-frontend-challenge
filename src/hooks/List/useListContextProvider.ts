@@ -4,15 +4,37 @@ import useLoginContext from "../Login/useLoginContext"
 
 const useListContextProvider = () => {
     const [ listData, setListData ] = useState<any>()
+    const [ completeListData, setCompleteListData ] = useState<any>()
     const [ responsibles, setResponsibles ] = useState<any>()
-    const [ page, setPage ] = useState<any>(1);
+    const [ page, setPage ] = useState<number>(1);
+
+    const [ inputFilters, setInputFilters ] = useState<string>("")
+    const [ searchInput, setSearchInput ] = useState<string>("")
+
+    const { setLoading } = useLoginContext();
 
     const isFirstPage = page === 1 ? true : false;
     const isLastPage = page === 15 ? true : false;
-    
-    const [ inputFilters, setInputFilters ] = useState<any>()
 
-    const { setLoading } = useLoginContext();
+    const handleGetCompleteList = async() => {
+      setLoading(true);
+      try {
+          const response = await apiAuth.get(`/v1/public/institutions/22/blox_offerings`)
+
+          setCompleteListData(response.data)
+
+          console.log(response.data)
+
+          for (let item of response.data) {
+            setResponsibles(item.cached_blox.responsible)
+          }
+
+          setLoading(false)
+      } catch (error: any) {
+          console.log(error.response.data)
+          setLoading(false)
+      }      
+    }
 
     const handleGetListData = async() => {
       setLoading(true);
@@ -36,6 +58,9 @@ const useListContextProvider = () => {
 
   return {
     handleGetListData,
+    handleGetCompleteList,
+    completeListData,
+    setCompleteListData,
     listData,
     setListData,
     responsibles,
@@ -44,6 +69,8 @@ const useListContextProvider = () => {
     setPage,
     inputFilters,
     setInputFilters,
+    searchInput,
+    setSearchInput,
     isFirstPage,
     isLastPage,
   }

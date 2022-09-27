@@ -107,7 +107,7 @@ export const TitleInputs = styled(Box)`
             font-size: 1.6rem;
 
             border-radius: 1rem;
-            background-color: ${props => props.theme.inputBackground};
+            color: ${props => props.theme.fontColor};
         }
 
         label {
@@ -126,6 +126,7 @@ export const TitleInputs = styled(Box)`
         width: 50rem;
 
         input {
+            color: ${props => props.theme.fontColor};
             font-size: 1.6rem;
         }
 
@@ -135,11 +136,23 @@ export const TitleInputs = styled(Box)`
         }
     }
 
-    .search-icon {
+    button {
         position: absolute;
 
         right: 1rem;
-        bottom: 0.5rem
+        bottom: -0.3rem;
+
+        color: ${props => props.theme.buttons};
+        
+        .search-icon {
+            color: ${props => props.theme.buttons};
+            transition: 300ms;
+
+            &:hover {
+                transform: scale(1.2);
+                color: ${props => props.theme.buttonsHover};
+            }
+        }
     }
 `
 
@@ -163,9 +176,11 @@ export const ListMainCards = styled(Box)`
 `
 
 export const ListAboveBottomContainer = styled(Box)`
+    position: absolute;
+    bottom: 10rem;
+
     display: flex;
     width: 100%;
-    margin-top: 16.5rem;
 
     .megaphone-icon {
         background-color: #65cc98;

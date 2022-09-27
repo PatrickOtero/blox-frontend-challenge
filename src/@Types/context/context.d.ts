@@ -25,14 +25,19 @@ export interface ILoginContext {
 
 export interface IListContext {
     handleGetListData: () => Promise<void>;
+    handleGetCompleteList: () => Promise<void>;
+    completeListData: any;
+    setCompleteListData: React.Dispatch<React.SetStateAction<any>>;
     listData: any;
     setListData: React.Dispatch<React.SetStateAction<any>>;
     responsibles: any;
     setResponsibles: React.Dispatch<React.SetStateAction<any>>;
-    page: any;
-    setPage: React.Dispatch<React.SetStateAction<any>>;
-    inputFilters: any;
-    setInputFilters: React.Dispatch<React.SetStateAction<any>>;
+    page: number;
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+    inputFilters: string;
+    setInputFilters: React.Dispatch<React.SetStateAction<string>>;
+    searchInput: string;
+    setSearchInput: React.Dispatch<React.SetStateAction<string>>;
     isFirstPage: boolean;
     isLastPage: boolean;
 }

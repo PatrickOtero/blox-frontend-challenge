@@ -2,6 +2,19 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 
 export const LoginFormContainer = styled(Box)`
+    @keyframes slideToRight {
+        0% {
+            opacity: 0;
+            margin-right: -40rem;
+        }
+
+        100% {
+            opacity: 1;
+            margin-right: 0rem;
+        }
+    }
+    animation: slideToRight 1000ms;
+
     display: flex;
     flex-direction: column;
     align-items: center;
