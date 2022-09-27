@@ -49,5 +49,4 @@
 
          - Implementar testes com Jest.
          - Aplicar os filtros de busca.
-         - Criar temas. (não é obrigatório e nem extra, mas quero fazer)
 
